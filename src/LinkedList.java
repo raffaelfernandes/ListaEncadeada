@@ -3,6 +3,7 @@ public class LinkedList<Item> {
 	private Node first;
 	private int size;
 	private Node aux;
+	private Node auxCheckRepeat;
 
 	public LinkedList() {
 		first = null;
@@ -49,8 +50,13 @@ public class LinkedList<Item> {
 			aux = first;
 			while (aux != null) {
 				if (aux.getName().equals(oldName)) {
-					aux.setName(newName);
-					return;
+					if (!checkRepeat(newName)) {
+						aux.setName(newName);
+						return;
+					}else {
+						System.out.println("\nNão é possível alterar o nome para um nome já existente na lista.");
+						return;
+					}
 				}
 				aux = aux.getNext();
 			}
@@ -70,7 +76,7 @@ public class LinkedList<Item> {
 				return;
 			} else {
 				if (aux.getNext() == null) {
-					System.out.println("Erro. Não é possível remover um nome inexistente na lista.");
+					System.out.println("\nErro. Não é possível remover um nome inexistente na lista.");
 					return;
 				} else {
 					Node auxTemp = new Node(null);
@@ -90,7 +96,7 @@ public class LinkedList<Item> {
 							this.size--;
 							return;
 						} else {
-							System.out.println("Erro. Não é possível remover um nome inexistente na lista.");
+							System.out.println("\nErro. Não é possível remover um nome inexistente na lista.");
 							return;
 						}
 					}
@@ -118,21 +124,21 @@ public class LinkedList<Item> {
 		if (first == null) {
 			return false;
 		} else {
-			aux = first;
+			auxCheckRepeat = first;
 			do {
-				if (aux.getName().equals(name)) {
+				if (auxCheckRepeat.getName().equals(name)) {
 					return true;
 				} else {
-					aux = aux.getNext();
+					auxCheckRepeat = auxCheckRepeat.getNext();
 				}
-			} while (aux != null);
+			} while (auxCheckRepeat != null);
 			return false;
 		}
 	}
 
-	@Override
+	/*@Override
 	public String toString() {
 		return "ListaEncadeada [first=" + first + "]";
-	}
+	}*/
 
 }

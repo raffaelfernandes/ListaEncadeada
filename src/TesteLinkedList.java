@@ -43,9 +43,10 @@ public class TesteLinkedList {
 		lista.addLast("Mauro");
 		lista.addLast("Raffael");
 		lista.changeName("Ian", "Juliana");
+		lista.changeName("Mauro", "Ian");
 		lista.changeName("Pietro", "Raffael");
 		lista.changeName("Claudio", "Yve");
-		System.out.println(lista);
+		//System.out.println(lista);
 		 
 	}
 	
@@ -57,12 +58,12 @@ public class TesteLinkedList {
 		lista.addFirst("Júlia");
 		lista.addLast("Donatela");
 		lista.removeName("Marcos");
-		System.out.println(lista);
+		//System.out.println(lista);
 		
 		LinkedList<String> lista2 = new LinkedList<>();
 		lista2.addFirst("Marcos");
 		lista2.removeName("Marcos");
-		System.out.println(lista2);
+		//System.out.println(lista2);
 		
 		LinkedList<String> lista3 = new LinkedList<>();
 		lista3.addFirst("Gael");
@@ -70,7 +71,7 @@ public class TesteLinkedList {
 		lista3.addFirst("Laura");
 		lista3.addFirst("Valéria");
 		lista3.removeName("Felipe");
-		System.out.println(lista3);
+		//System.out.println(lista3);
 		
 		LinkedList<String> lista4 = new LinkedList<>();
 		lista4.addFirst("Gael");
