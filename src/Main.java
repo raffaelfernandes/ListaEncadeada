@@ -19,13 +19,21 @@ public class Main {
 			case 1: {
 				System.out.print("\nDigite um nome para inserir no início da lista: ");
 				String name = sc.nextLine();
-				list.addFirst(name);
+				if (!list.checkRepeat(name)) {
+					list.addFirst(name);
+				} else {
+					System.out.println("Não é possível inserir um nome repetido na lista.");
+				}
 				break;
 			}
 			case 2: {
 				System.out.print("\nDigite um nome para inserir no final da lista: ");
 				String name = sc.nextLine();
-				list.addLast(name);
+				if (!list.checkRepeat(name)) {
+					list.addLast(name);
+				} else {
+					System.out.println("Não é possível inserir um nome repetido na lista.");
+				}
 				break;
 			}
 			case 3: {

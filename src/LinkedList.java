@@ -120,7 +120,7 @@ public class LinkedList<Item> {
 		} else {
 			aux = first;
 			do {
-				if (aux.getName() == name) {
+				if (aux.getName().equals(name)) {
 					return true;
 				} else {
 					aux = aux.getNext();
