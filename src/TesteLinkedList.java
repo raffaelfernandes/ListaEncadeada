@@ -7,7 +7,7 @@ public class TesteLinkedList {
 	@Test
 	public void testaAddFirst() {
 
-		ListaEncadeada<String> lista = new ListaEncadeada<>();
+		LinkedList<String> lista = new LinkedList<>();
 
 		lista.addFirst("João");
 		lista.addLast("Maria");
@@ -18,7 +18,7 @@ public class TesteLinkedList {
 
 	@Test
 	public void testaAddLast() {
-		ListaEncadeada<String> lista2 = new ListaEncadeada<>();
+		LinkedList<String> lista2 = new LinkedList<>();
 
 		lista2.addLast("Teresa");
 
@@ -26,7 +26,7 @@ public class TesteLinkedList {
 
 	@Test
 	public void testaCheckRepeat() {
-		ListaEncadeada<String> lista = new ListaEncadeada<>();
+		LinkedList<String> lista = new LinkedList<>();
 		lista.checkRepeat("Mara");
 		lista.addFirst("Mara");
 		lista.addFirst("Julia");
@@ -37,28 +37,21 @@ public class TesteLinkedList {
 
 	@Test
 	public void testaChangeName() {
-		ListaEncadeada<String> lista = new ListaEncadeada<>();
-		lista.changeName("Kauã", "Ana");
-		lista.addLast("Teresa");
-		lista.addFirst("Marcos");
-		//System.out.println(lista);
-		lista.changeName("Dony", "Bruna");
-		if (lista.checkRepeat("Teresa")) {
-			lista.changeName("Tiago", "Teresa");
-			if (lista.checkRepeat("João") == false) {
-				lista.addFirst("João");
-			}
-		}
-		//System.out.println(lista);
-		/*
-		 * lista.checkRepeat("Teresa"); lista.changeName("Teresa", "João");
-		 * System.out.println(lista); }
-		 */
+		LinkedList<String> lista = new LinkedList<>();
+		lista.changeName("Pietro", "Raffael");
+		lista.addFirst("Juliana");
+		lista.addLast("Mauro");
+		lista.addLast("Raffael");
+		lista.changeName("Ian", "Juliana");
+		lista.changeName("Pietro", "Raffael");
+		lista.changeName("Claudio", "Yve");
+		System.out.println(lista);
+		 
 	}
 	
 	@Test
 	public void testaRemoveName() {
-		ListaEncadeada<String> lista = new ListaEncadeada<>();
+		LinkedList<String> lista = new LinkedList<>();
 		lista.removeName("Marcos");
 		lista.addFirst("Marcos");
 		lista.addFirst("Júlia");
@@ -66,28 +59,58 @@ public class TesteLinkedList {
 		lista.removeName("Marcos");
 		System.out.println(lista);
 		
-		ListaEncadeada<String> lista2 = new ListaEncadeada<>();
+		LinkedList<String> lista2 = new LinkedList<>();
 		lista2.addFirst("Marcos");
 		lista2.removeName("Marcos");
 		System.out.println(lista2);
 		
-		ListaEncadeada<String> lista3 = new ListaEncadeada<>();
+		LinkedList<String> lista3 = new LinkedList<>();
 		lista3.addFirst("Gael");
 		lista3.addFirst("Felipe");
 		lista3.addFirst("Laura");
 		lista3.addFirst("Valéria");
 		lista3.removeName("Felipe");
 		System.out.println(lista3);
+		
+		LinkedList<String> lista4 = new LinkedList<>();
+		lista4.addFirst("Gael");
+		lista4.removeName("Gael");
+		
+		LinkedList<String> lista5 = new LinkedList<>();
+		lista5.addFirst("Gael");
+		lista5.removeName("Marcos");
+		
+		LinkedList<String> lista6 = new LinkedList<>();
+		lista6.addFirst("Gael");
+		lista6.addFirst("Henrique");
+		lista6.removeName("Marcos");
+		System.out.println(lista6.showNamesAndQuantity());
 	}
 	
 	@Test
 	public void TestaShowNamesAndQuantity() {
-		ListaEncadeada<String> lista4 = new ListaEncadeada<>();
-		lista4.addFirst("Aabrão");
-		lista4.addFirst("Marcelo");
-		lista4.addFirst("Antônia");
-		lista4.addLast("Tony");
-		System.out.println(lista4.showNamesAndQuantity());
+		LinkedList<String> lista7 = new LinkedList<>();
+		lista7.addFirst("Aabrão");
+		lista7.addFirst("Marcelo");
+		lista7.addFirst("Antônia");
+		lista7.addLast("Tony");
+		System.out.println(lista7.showNamesAndQuantity());
+		
+		LinkedList<String> lista8 = new LinkedList<>();
+		System.out.println(lista8.showNamesAndQuantity());
+	}
+	
+	@Test
+	public void testeDaMain() {
+		LinkedList<String> list = new LinkedList<>();
+		list.addLast("Pedro");
+		System.out.println(list.showNamesAndQuantity());
+		list.removeName("Pedro");
+		list.addFirst("Hael");
+		list.addLast("Pedro");
+		list.changeName("Jota", "Hael");
+		list.removeName("Jota");
+		System.out.println(list.showNamesAndQuantity());
 	}
 
 }
